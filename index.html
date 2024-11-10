@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .button_group{
+            display: flex;
+            justify-content: center;
+        }
+        .button{
+            border: none;
+            font-size: 30px;
+            margin: 0 20px;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            gap: 20px;
+        }
+        .btnNo{
+            position: absolute;
+            left: calc(60%+40px);
+            z-index: 4;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text">Do you love me?😞</h1>
+    <div class="button_group">
+        <button class="btnYes" style="background-color: pink;">YES</button>
+        <button class="btnNo" style="background-color: red;">NO</button>
+    </div>
+    <script>
+        var btnno = document.querySelector(".btnNo");
+        var btnyes = document.querySelector(".btnYes");
+        var text = document.querySelector(".text");
+
+        btnno.addEventListener("mouseover",function(){
+            var leftRandom =Math.floor(Math.random()*101);
+            var topRandom =Math.floor(Math.random()*101);
+            btnno.style.left = leftRandom+"%";
+            btnno.style.top  = topRandom+"%";
+        });
+        btnyes.addEventListener("click",function(){
+            text.innerHTML="I Love you too ❤️";
+        });
+    </script>
+</body>
+</html>
